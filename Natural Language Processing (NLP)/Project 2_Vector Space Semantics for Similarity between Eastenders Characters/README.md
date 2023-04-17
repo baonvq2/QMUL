@@ -1,0 +1,31 @@
+In this project, you will be creating a vector representation of a document containing lines spoken by a character in the Eastenders script data (i.e. from the file training.csv), then improving that representation such that each character vector is maximially distinguished from the other character documents. This distinction is measured by how well a simple information retrieval classification method can select documents from validation and test data as belonging to the correct class of document (i.e. deciding which character spoke the lines by measuring the similarity of those character document vectors to those built in training).
+
+As the lines are not evenly distributed in terms of frequency, this coursework stipulates you can only use a maximum of the first 400 lines of each character in the training data training.csv to create the training documents, and a maximum of the first 40 lines in the test data (from test.csv). This makes it more challenging, as number of lines spoken by a character can't be used directly or otherwise as a feature.
+
+A simple vector representation for each character document is done for you to start with in this code, as is the pipeline of similarity-based information retrieval based evaluation. You need to improve the character vector representations by pre-processing, feature extraction and transformation techniques, as per Questions 1-6 below, which you need to complete as instructed.
+
+Q1. Improve pre-processing 
+Using the pre-processing techniques you have learned in the module, improve the pre_process function above, which currently just tokenizes text based on white space.
+
+When developing, use the 90% train and 10% validation data split from the training file, using the first 360 lines from the training split and first 40 lines from the validation split, as per above. To check the improvements by using the different techniques, use the compute_IR_evaluation_scores function as above. The mean rank is the main metric you need to focus on improving throughout this assignment, where the target/best possible performance is 1 (i.e. all test/validation data character documents are closest to their corresponding training data character documents) and the worst is 16. Initially the code in this template achieves a mean rank of 5.12 and accuracy of 0.3125 on the test set and a mean rank of 4.5 and accuracy of 0.25 on the validation set - you should be looking to improve those, particularly getting the mean rank as close to 1 as possible.
+
+Q2. Improve linguistic feature extraction 
+Use the feature extraction techniques you have learned to improve the to_feature_vector_dictionary function above. Examples of extra features could include extracting n-grams of different lengths and including POS-tags. You could also use sentiment analysis or another text classifier's result when applied to the features for each character document. You could even use a gender classifier trained on the same data using the GENDER column (but DO NOT USE the GENDER column directly in the features for the final vector).
+
+You could use feature selection/reduction with techniques like minimum/maximum document frequency and/or feature selection like k-best selection using different statistical tests https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html. Again, develop on 90% training and 10% validation split and note the effect/improvement in mean rank with the techniques you use.
+
+Q3. Analyse the similarity results 
+From your system so far run on the 90%/10% training/validation split, identify the heldout character vectors ranked closest to each character's training vector which are not the character themselves, and those furthest away, as displayed using the plot_heat_map_similarity function. In your report, try to ascribe reasons why this is the case, particularly for those where there isn't a successful highest match between the target character in the training set and that character's vector in the heldout set yet. Observations you could make include how their language use is similar, resulting in similar word or ngram features.
+
+Q4. Add dialogue context and scene features 
+Adjust create_character_document_from_dataframe and the other functions appropriately so the data incorporates the context of the line spoken by the characters in terms of the lines spoken by other characters in the same scene (before and after the target character's lines). HINT: you should use the Episode and Scene columns to check which characters are in the same scene to decide whether to include their lines or not. You can also use scene_info column to extract information about the scene (but DO NOT USE the GENDER and CHARACTER columns directly).
+
+Q5. Improve the vectorization method 
+Use a matrix transformation technique like TF-IDF (https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html) to improve the create_document_matrix_from_corpus function, which currently only uses a dictionary vectorizor (DictVectorizer) which straight-forwardly maps from the feature dictionaries produced for each character document to a sparse matrix.
+
+As the create_document_matrix_from_corpus is designed to be used both in training/fitting (with fitting set to True) and in transformation alone on test/validation data (with fitting set to False), make sure you initialize any transformers you want to try in the same place as corpusVectorizer = DictVectorizer() before you call create_document_matrix_from_corpus. Again, develop on 90% training 10% validation split and note the effect/improvement in mean rank with each technique you try.
+
+Q6. Run on final test data 
+Test your best system using the code below to train on all of the training data (using the first 400 lines per character maximum) and do the final testing on the test file (using the first 40 lines per character maximum).
+
+Make any neccessary adjustments such that it runs in the same way as the training/testing regime you developed above- e.g. making sure any transformer objects are initialized before create_document_matrix_from_corpus is called. Make sure your best system is left in the notebook and it is clear what the mean rank, accuracy of document selection are on the test data.
