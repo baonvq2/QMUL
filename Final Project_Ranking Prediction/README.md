@@ -1,5 +1,7 @@
 Project topic: Predicting Rankings of Prop-tech Webpages on Google Organic Search Engine Result Pages
+
 #Ranking #Learning-To-Rank #prop-tech #GoogleSEO
+
 The paper focuses on addressing ranking prediction problems by applying Learning-To-Rank (LTR) methods, specifically pointwise, pairwise, and listwise approaches. LTR has demonstrated its usefulness and effectiveness in
 tackling such problems. The study aims to implement these prediction methods in a real-world ranking context and showcases their performance comparison across the validation dataset. Five models, including pointwise,
 RankNet (pairwise), LambdaRank (pairwise), LambdaMART (pairwise), and ListNet (listwise), are tested to determine the best-performing approach. While the pointwise, RankNet, and listwise models are constructed
