@@ -33,7 +33,7 @@ be the most suitable and effective choice for this study. Its performance in acc
 
 
 
-In the supporting materials, there are total 6 files, including:
+In the supporting materials, there are total 6 files, including:  /n
 	- 4 Jupyter notebooks (.ipynb): 
 		+ Data collection (Data Collection-Final.ipynb): a thorough data collection process, including extracting general data, Page experience metrics and other html/content-related factors
 		+ Pagerank calculation (PageRank-Final.ipynb): using NetworkX and collected links
@@ -43,10 +43,10 @@ In the supporting materials, there are total 6 files, including:
 		+ Selected keywords (Final_kw.xlsx): final list of chosen search keywords, used for 'Data collection'
 		+ Final data (processed_data.xlsx): collected data after implementing 'Data collection' and 'Pagerank calculation', used in 'Model construction and learning' and 'Model validation and selection'
 
-The process of using the file should be like this:
-	- Stage 1: 'Data collection' & 'Pagerank calculation'
-	- Stage 2: 'Model construction and learning'
-	- Stage 3: 'Model validation and selection'
+The process of using the file should be like this: /n
+	- Stage 1: 'Data collection' & 'Pagerank calculation' /n
+	- Stage 2: 'Model construction and learning' /n
+	- Stage 3: 'Model validation and selection' /n
 
 Below is modules/libraries that need to be installed for running the notebooks:
 	- basic packages: numpy, pandas, os, IPython, time, datetime, matplotlib, seaborn, operator, statistics
