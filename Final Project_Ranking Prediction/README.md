@@ -21,3 +21,43 @@ also demonstrates lower variance across all queries and the selected test datase
 be the most suitable and effective choice for this study. Its performance in accurately predicting rankings further reinforces its value and relevance in the research context.
 
 ![image](https://github.com/baonvq2/QMUL/assets/110440601/6c513799-56ca-4d93-ad82-44f64a828a20)
+
+
+
+
+
+
+
+
+
+
+
+
+In the supporting materials, there are total 6 files, including:
+	- 4 Jupyter notebooks (.ipynb): 
+		+ Data collection (Data Collection-Final.ipynb): a thorough data collection process, including extracting general data, Page experience metrics and other html/content-related factors
+		+ Pagerank calculation (PageRank-Final.ipynb): using NetworkX and collected links
+		+ Model construction and learning (Model Build-Final.ipynb): building models, tuning and generate performance on selected test data; insights into feature importance
+		+ Model validation and selection (Model Validation-Final.ipynb): validate model on different test data (seeds) and visualize the performances
+	- 2 excel files (.xlsx):
+		+ Selected keywords (Final_kw.xlsx): final list of chosen search keywords, used for 'Data collection'
+		+ Final data (processed_data.xlsx): collected data after implementing 'Data collection' and 'Pagerank calculation', used in 'Model construction and learning' and 'Model validation and selection'
+
+The process of using the file should be like this:
+	- Stage 1: 'Data collection' & 'Pagerank calculation'
+	- Stage 2: 'Model construction and learning'
+	- Stage 3: 'Model validation and selection'
+
+Below is modules/libraries that need to be installed for running the notebooks:
+	- basic packages: numpy, pandas, os, IPython, time, datetime, matplotlib, seaborn, operator, statistics
+	- torch
+	- torchvision
+	- pytorchltr
+	- lightgbm
+	- xgboost (version 2.0.0)
+	- sklearn
+	- skopt, optuna
+	- captum
+	- shap
+	- modules for data collection: requests, json, urllib, requests_html, undetected_chromedriver, selenium, bs4, whois, warnings
+	- networkx
