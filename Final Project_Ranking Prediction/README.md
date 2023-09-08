@@ -12,3 +12,10 @@ in capturing the relationships among URLs within a query and producing highly ac
 certain HTML content, like total images or keyword presence in titles and URLs, to the model's prediction performance. These insights provide valuable guidance for online marketers seeking to optimize their webpage rankings and
 overall search engine visibility. Moreover, the research offers practical implications and suggestions for related future works, paving the way for further advancements in ranking prediction techniques and SEO strategies. The study's
 comprehensive evaluation of different LTR methods and its emphasis on real-world applicability make it a valuable contribution to the field of ranking prediction.
+
+Result:
+The boxplot of NDCG performance among the models in Figure 1 provides valuable insights into how each model's evaluation metric varies across search queries and across different test sets, created with random seed of 1, 5 and 7.
+While the pointwise, LambdaRank, and LambdaMART models exhibit commendable performances, the ListNet model stands out as the better choice for the prediction task. Not only does it produce slightly higher NDCG scores, but it
+also demonstrates lower variance across all queries and the selected test datasets, indicating its robust performance. If purely based on the NDCG, with the performance averaging at over 0.95, ListNet, a listwise method, proves to
+be the most suitable and effective choice for this study. Its performance in accurately predicting rankings further reinforces its value and relevance in the research context.
+![image](https://github.com/baonvq2/QMUL/assets/110440601/6c513799-56ca-4d93-ad82-44f64a828a20)
